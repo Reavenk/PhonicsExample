@@ -1,0 +1,3 @@
+[submodule "Phonics"]
+	path = Assets/Refs/Phonics
+	url = https://github.com/Reavenk/PxPre-Phonics.git
