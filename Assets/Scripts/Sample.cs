@@ -203,7 +203,12 @@ public class Sample : MonoBehaviour
             {
                 if(down == false && ki.id != -1)
                 { 
-                    this.genmgr.StopNote(ki.id);
+                    bool release = true;
+
+#if UNITY_WEBGL
+                    release = false;
+#endif
+                    this.genmgr.StopNote(ki.id, release);
                     ki.id = -1;
                 }
                 else if(down == true && ki.id == -1)
