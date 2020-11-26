@@ -171,7 +171,7 @@ public class Sample : MonoBehaviour
         //      THE GUI FOR THE EXTRA CONTROLS
         //
         ////////////////////////////////////////////////////////////////////////////////
-        
+        GUILayout.BeginVertical(GUILayout.ExpandWidth(true), GUILayout.Height(Screen.height));
         GUILayout.BeginHorizontal(GUILayout.Width( 200.0f));
             GUILayout.Label("Master", GUILayout.ExpandWidth(false));
             GUILayout.Space(10.0f);
@@ -242,7 +242,8 @@ public class Sample : MonoBehaviour
         //
         ////////////////////////////////////////////////////////////////////////////////
         
-        this.scroll = GUI.BeginScrollView( new Rect(0.0f, 220.0f, 200.0f, 400.0f), this.scroll, new Rect(0.0f, 0.0f, 200.0f, 700.0f));
+        GUILayout.Space(140.0f);
+        this.scroll = GUILayout.BeginScrollView( this.scroll, GUILayout.Width(300.0f), GUILayout.ExpandHeight(true));
 
             GUILayout.Label("Select the instrument to play:");
             GUILayout.Space(20.0f);
@@ -259,5 +260,6 @@ public class Sample : MonoBehaviour
             }
 
         GUI.EndScrollView();
+        GUILayout.EndVertical();
     }
 }
